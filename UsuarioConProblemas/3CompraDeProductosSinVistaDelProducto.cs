@@ -1,0 +1,130 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+
+
+
+namespace TestProject
+{
+    public class IngresarAlSistemaCompraProductos
+    {
+        [Fact]
+        public void ListadeProductos()
+        {
+            IWebDriver driver = new ChromeDriver();
+
+            try
+            {
+
+              
+
+
+                driver.Url = "https://www.saucedemo.com/";
+
+                IWebElement usuario = driver.FindElement(By.XPath("/html/body/div/div/div[2]/div[1]/div/div/form/div[1]/input"));
+                usuario.SendKeys("standard_user");
+
+
+                IWebElement pass = driver.FindElement(By.XPath("/html/body/div/div/div[2]/div[1]/div/div/form/div[2]/input"));
+                pass.SendKeys("secret_sauce");
+
+
+                IWebElement btnIngresar = driver.FindElement(By.XPath("/html/body/div/div/div[2]/div[1]/div/div/form/input"));
+                btnIngresar.Click();
+                Thread.Sleep(5000);
+
+
+             
+
+                IWebElement btnAgregarProducto1 = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div/div/div[3]/div[2]/div[2]/button"));
+                btnAgregarProducto1.Click();                                                     
+                Thread.Sleep(2000);
+                IWebElement btnAgregarProducto2 = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div/div/div[4]/div[2]/div[2]/button"));
+                btnAgregarProducto2.Click();
+                Thread.Sleep(2000);
+                IWebElement btnAgregarProducto3 = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div/div/div[2]/div[2]/div[2]/button"));
+                btnAgregarProducto3.Click();
+                Thread.Sleep(2000);
+                IWebElement btnAgregarProducto4 = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div/div/div[6]/div[2]/div[2]/button"));
+                btnAgregarProducto4.Click();
+                Thread.Sleep(2000);
+
+
+
+                IWebElement elementoCarrito = driver.FindElement(By.XPath("/html/body/div/div/div/div[1]/div[1]/div[3]/a"));
+                string textoDelElemento = elementoCarrito.Text;
+
+                if (textoDelElemento == "4")
+                {
+                    IWebElement btnCarrito = driver.FindElement(By.XPath("/html/body/div/div/div/div[1]/div[1]/div[3]/a"));
+                    btnCarrito.Click();
+                    Thread.Sleep(5000);
+                    IWebElement btnCheckOut = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div[2]/button[2]"));
+                    btnCheckOut.Click();
+                    Thread.Sleep(5000);
+
+                    IWebElement Nombre = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/form/div[1]/div[1]/input"));
+                    IWebElement Apellido = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/form/div[1]/div[2]/input"));
+                    IWebElement CodigoPostal = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/form/div[1]/div[3]/input"));
+
+
+
+                    Nombre.SendKeys("Alexander");
+                    Apellido.SendKeys("Orellana");
+                    CodigoPostal.SendKeys("12345");
+
+                    Thread.Sleep(5000);
+
+                    IWebElement btnContinuar = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/form/div[2]/input"));
+                    btnContinuar.Click();
+
+                    Thread.Sleep(5000);
+
+                    IWebElement btnFinalizar = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div[2]/div[9]/button[2]"));
+                    btnFinalizar.Click();
+                    Thread.Sleep(2000);
+
+                    IWebElement btnRegresar2 = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div/div[2]/div[9]/button[2]"));
+                    btnRegresar2.Click();
+
+                    Thread.Sleep(2000);
+
+                    IWebElement elemento = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div"));
+                    string TextoDelElemento = elemento.Text;
+
+
+                    Assert.Equal("Your order has been dispatched, and will arrive just as fast as the pony can get there!", TextoDelElemento);
+                }
+                else 
+                {
+                    Assert.True(false);
+                }
+
+
+               
+
+
+
+                //Assert.NotNull(elemento);
+
+
+
+                driver.Quit();
+
+            }
+            catch (NoSuchElementException e)
+            {
+                Assert.False(false);
+                Console.WriteLine(e.Message);
+                driver.Quit();
+
+            }
+
+
+            
+
+
+        }
+
+
+    }
+}
