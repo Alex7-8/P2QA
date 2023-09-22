@@ -9,9 +9,12 @@
       "UsuarioSinProblemas/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.6.0",
+          "PruebaDeInicioDeSesion": "1.0.0",
           "Selenium.Support": "4.12.4",
           "Selenium.WebDriver": "4.12.4",
           "Selenium.WebDriver.ChromeDriver": "117.0.5938.6200",
+          "UsuarioConProblemas": "1.0.0",
+          "UsuarioConProblemasDeRendimiento": "1.0.0",
           "coverlet.collector": "3.2.0",
           "xunit": "2.4.2",
           "xunit.runner.visualstudio": "2.4.5"
@@ -1101,7 +1104,46 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.4.5": {}
+      "xunit.runner.visualstudio/2.4.5": {},
+      "PruebaDeInicioDeSesion/1.0.0": {
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.6.0",
+          "Selenium.Support": "4.12.4",
+          "Selenium.WebDriver": "4.12.4",
+          "Selenium.WebDriver.ChromeDriver": "117.0.5938.6200",
+          "xunit": "2.4.2"
+        },
+        "runtime": {
+          "PruebaDeInicioDeSesion.dll": {}
+        }
+      },
+      "UsuarioConProblemas/1.0.0": {
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.6.0",
+          "PruebaDeInicioDeSesion": "1.0.0",
+          "Selenium.Support": "4.12.4",
+          "Selenium.WebDriver": "4.12.4",
+          "Selenium.WebDriver.ChromeDriver": "117.0.5938.6200",
+          "xunit": "2.4.2"
+        },
+        "runtime": {
+          "UsuarioConProblemas.dll": {}
+        }
+      },
+      "UsuarioConProblemasDeRendimiento/1.0.0": {
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.6.0",
+          "PruebaDeInicioDeSesion": "1.0.0",
+          "Selenium.Support": "4.12.4",
+          "Selenium.WebDriver": "4.12.4",
+          "Selenium.WebDriver.ChromeDriver": "117.0.5938.6200",
+          "UsuarioConProblemas": "1.0.0",
+          "xunit": "2.4.2"
+        },
+        "runtime": {
+          "UsuarioConProblemasDeRendimiento.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -1795,6 +1837,21 @@
       "sha512": "sha512-OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw==",
       "path": "xunit.runner.visualstudio/2.4.5",
       "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
+    },
+    "PruebaDeInicioDeSesion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UsuarioConProblemas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UsuarioConProblemasDeRendimiento/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

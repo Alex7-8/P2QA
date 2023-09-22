@@ -48,8 +48,7 @@ namespace TestProject
 
             catch (NoSuchElementException e)
             {
-                Assert.False(false);
-                Console.WriteLine(e.Message);
+                Assert.Fail(e.Message);
                 driver.Quit();
             }
 

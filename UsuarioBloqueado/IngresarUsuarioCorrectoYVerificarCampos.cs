@@ -30,6 +30,8 @@ namespace TestProject
 
                 string textoDelElemento = elemento.Text;
 
+
+
                 if (textoDelElemento == "Epic sadface: Username is required") 
                 {
                     IWebElement usuario = driver.FindElement(By.XPath("/html/body/div/div/div[2]/div[1]/div/div/form/div[1]/input"));
@@ -58,6 +60,11 @@ namespace TestProject
                 IWebElement elemento3 = driver.FindElement(By.XPath("/html/body/div/div/div/div[1]/div[1]/div[2]/div"));
                 textoDelElemento = elemento3.Text;
 
+
+
+
+
+
                 if (textoDelElemento == "Swag Labs")
                 {
 
@@ -66,7 +73,7 @@ namespace TestProject
                 }
                 else
                 {
-                    Assert.True(false);
+                    Assert.False(true);
                 }
 
                 driver.Quit();
@@ -74,8 +81,8 @@ namespace TestProject
 
             catch (NoSuchElementException e)
             {
-                Assert.False(false);
-                Console.WriteLine(e.Message);
+                Assert.Fail(e.Message);
+                
                 driver.Quit();
             }
 
