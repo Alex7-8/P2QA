@@ -163,7 +163,7 @@ namespace TestProject
                 else
                 {
                     driver.Quit();
-                    Assert.Fail("Existe un Bug que no permite añadir mas pruductos al carrito");
+                    Assert.Fail("Existe un Bug que no permite añadir mas productos al carrito");
                 }
 
 
